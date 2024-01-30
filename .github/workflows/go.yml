@@ -35,4 +35,4 @@ jobs:
       if: ${{ !github.head_ref }}
       with:
         name: ${{ matrix.goos }}_${{ matrix.goarch }}
-        path: output/
+    path: output/**
