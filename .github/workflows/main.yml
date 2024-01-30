@@ -31,10 +31,10 @@ jobs:
     - name: Build
       run: |
         go mod download
-        GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} go build -o myapp-${{ matrix.os }}-${{ matrix.arch }}
+        GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} go build -o myapp-${{ matrix.goos }}-${{ matrix.goarch }}
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: myapp-artifact-${{ matrix.os }}-${{ matrix.arch }}
-        path: myapp-${{ matrix.os }}-${{ matrix.arch }}
+        name: myapp-artifact-${{ matrix.goos }}-${{ matrix.goarch }}
+        path: myapp-${{ matrix.goos }}-${{ matrix.goarch }}
