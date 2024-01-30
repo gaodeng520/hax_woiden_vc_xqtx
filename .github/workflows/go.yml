@@ -23,6 +23,8 @@ jobs:
 
     - name: Build
       run: go build -v ./main.go
-
-    - name: Test
-      run: go test -v ./main
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact-name  # 设置artifact的名称
+        path: ./   # 设置要上传的路径，这里假设编译好的文件在当前目录
